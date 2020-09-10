@@ -7,7 +7,7 @@ const burger = {name: "Burger", price: 18, category: "Lunch", discount: function
   } else if (person === "public") {
     return (this.price - (this.price * .10));
   } else {
-    return "No dicount for you buddy";
+    return "No discount for you buddy";
   }
 }};
 const breakfastBurrito = {name: "Breakfast Burrito", price: 16, category:"Breakfast"};
@@ -52,11 +52,16 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 
 /* Task 3: Console.log just Julius' feedback */
 
+console.log(reviews[5].feedback)
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
+let newRating = {name:"Marcos", rating: 5, feedback:"Lovely place,with lovely staff, in a lovely town."}
+reviews.push(newRating)
 
-/* Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+// Task 5: Add the following feedback to Reyna's rating - "this place is chill with really cool people, great for getting work done on weekdays"
+
+reviews[7].feedback = "this place is chill with really cool people, great for getting work done on weekdays"
 
 /*  Task 6: Write a function to return a review based on the index of the review in the array.
 
