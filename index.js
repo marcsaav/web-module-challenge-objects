@@ -108,9 +108,14 @@ function getLastReview(arr) {
     {name:"Lauren", rating: 4, feedback: "Absolutely love that they have karaoke Fridays! Food and drink selection is okay."}]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
-  }
+function getReviewByRating(arr, rev) {
+  let reviewRange = []
+    for(let i = 0; i < arr.length; i++) {
+      if(arr[i].rating >= rev && arr[i].rating < (rev + 1) ) {
+        reviewRange.push(arr[i]);
+      }
+     } return reviewRange
+    }
 
 
 /** STRETCH 2: Write a function called 'getLongestReview' that returns an array containing all reviews longer than 15 words.
@@ -126,9 +131,18 @@ and should return an array of objects.
     {name: "Brett", rating: 3, feedback: "great selection of snacks and a nice cafe area to get work done during the day."},
     {name: "Julius", rating: 2, feedback: "I was largely unimpressed by this venue. Nothing special on the menu and too expensive. The atmosphere is polarizing, and not for me, but I think some would like it." }]
 */
-  function getLongReviews(/* code here */) {
-    /* code here */
-  }
+function getLongReviews(arr) {
+  let longReviews = []
+
+  for(i = 0; i < arr.length; i++) {
+    let revLength = arr[i].feedback.split(" ").length;
+    if(revLength > 15) {
+      longReviews.push(arr[i]);
+    };
+  } return longReviews
+}
+
+
 
 
 /* STRETCH 3:  This challenge is not related to the data above!
@@ -149,7 +163,10 @@ The returned object should have the following characteristics:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-
+function carMarker(odometer) {
+   return car = {odometer:odometer, drive: function(distance) {
+        this.odometer = this.odometer + distance;
+        return this.odometer;
+   }
+  }
 }
